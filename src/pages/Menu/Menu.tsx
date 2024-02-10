@@ -16,8 +16,8 @@ export function Menu() {
 			const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
 			setProducts(data);
 		} catch (e) {
-			// 	console.error(e);
-		// 	return;
+			console.error(e);
+			return;
 		}
 	};
 
