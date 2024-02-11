@@ -37,3 +37,8 @@
   color: var(--primary-color);
 }
 
+.error {
+  background: rgb(227, 227, 65);
+  color: rgb(53, 60, 182);
+  padding: 20px;
+}
