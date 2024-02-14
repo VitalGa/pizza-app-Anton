@@ -1,4 +1,4 @@
-import { Link, useActionData, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Headling from '../../components/Headling/Headling';
 import Input from '../../components/Input/Input';
@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { login, userAction } from '../../store/user.slice';
 import { RootState } from '@reduxjs/toolkit/query';
- 
 
 
 export type LoginForm = {
@@ -24,7 +23,7 @@ export function Login() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
 	const { jwt, loginErrorMessage } = useSelector((s: RootState) => s.user);
-	 
+	
 
 	useEffect(() => {
 		if(jwt) {
