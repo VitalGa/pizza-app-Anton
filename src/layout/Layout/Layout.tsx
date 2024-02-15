@@ -22,7 +22,6 @@ export function Layout() {
 		navigate('auth/login');
 	};
 
-
 	return <div className={styles['layout']}>
 		<div className={styles['sidebar']}>
 			<div className={styles['user']}>
@@ -40,8 +39,11 @@ export function Layout() {
 					[styles.active]: isActive
 				})}>
 					<img src="/cart-icon.svg" alt="Иконка корзины"/>
-					Корзина</NavLink>
-				{items.reduce((acc, item) => acc += item.count, 0)}
+					Корзина 
+					<span className={styles['cart-counte']}>{items.reduce((acc, item) => acc += item.count, 0)}</span>
+					
+				</NavLink>
+				
 			</div>	
 			<Button className={styles['exit']} onClick={logout}>
 				<img src="/exit-item.svg" alt="Иконка выхода"/>
