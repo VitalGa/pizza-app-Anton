@@ -5,10 +5,8 @@ import Input from '../../components/Input/Input';
 import styles from './Login.module.css';
 import { FormEvent, useEffect } from 'react'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch } from '../../store/store';
+import { AppDispatch, RootState } from '../../store/store';
 import { login, userAction } from '../../store/user.slice';
-import { RootState } from '@reduxjs/toolkit/query';
-
 
 export type LoginForm = {
       email: {

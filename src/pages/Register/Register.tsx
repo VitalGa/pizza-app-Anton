@@ -37,7 +37,7 @@ export function Register() {
 	const submit = async (e: FormEvent) => {
 		e.preventDefault();
 		dispatch(userAction.clearRegisterError());
-		const target = e.target as typeof e.target & LoginForm;
+		const target = e.target as typeof e.target & RegisterForm;
 		const { email, password, name } = target;			
 		dispatch(register({ email: email.value, password: password.value, name: name.value }));
 	};

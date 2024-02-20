@@ -4,6 +4,7 @@ import { ProductCardProps } from './ProductCard.props';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { cartAction } from '../../store/cart.slice';
+import { MouseEventHandler } from 'react';
 
 function ProductCard(props: ProductCardProps) {
 	const dispatch = useDispatch<AppDispatch>();
@@ -21,7 +22,7 @@ function ProductCard(props: ProductCardProps) {
 						{props.price}&nbsp;
 						<span className={styles['currency']}>₽</span>
 					</div>
-					<button className={styles['add-to-card']} onClick={add}>
+					<button className={styles['add-to-card']} onClick={add as unknown as MouseEventHandler<HTMLButtonElement>}>
 						<img src="/cart-button-icon.svg" alt="Добавить в корзину" />
 					</button>
 			
